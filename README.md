@@ -25,7 +25,7 @@ execute_delete_inserts()    默认1个delete，一个insert
 将附件中独立的oltp_common.lua/oltp_read_write.lua替换原有的文件。
 Prepare:
 cd /usr/local/sysbench/share/sysbench/
-sysbench oltp_common.lua --mysql_storage_engine=greatdb --db-driver=mysql --mysql-host=172.16.64.201 --mysql-port=16306 --mysql-user=dbtest --mysql-password=123456 --mysql-db=sbtest --threads=10 --table_size=100000 --tables=10 --table_columns=20  prepare
+sysbench oltp_common.lua --mysql_storage_engine=innodb --db-driver=mysql --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=dbtest --mysql-password=123456 --mysql-db=sbtest --threads=10 --table_size=100000 --tables=10 --table_columns=20  prepare
  
 Run:
-sysbench oltp_read_write.lua --db-driver=mysql --mysql-host=172.16.64.201 --mysql-port=16306 --mysql-user=dbtest --mysql-password=123456 --mysql-db=sbtest --threads=10 --table_size=500 --tables=100000 --time=1000 --histogram --report-interval=1 --db-ps-mode=disable --table_columns=20 --point_selects=1 --trx_read_nums=2 --trx_write_nums=2 run
+sysbench oltp_read_write.lua --db-driver=mysql --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=dbtest --mysql-password=123456 --mysql-db=sbtest --threads=10 --table_size=500 --tables=100000 --time=1000 --histogram --report-interval=1 --db-ps-mode=disable --table_columns=20 --point_selects=1 --trx_read_nums=2 --trx_write_nums=2 run
