@@ -21,8 +21,8 @@ execute_delete_inserts()    默认1个delete，一个insert<br />
  
  
 ### 使用
-解压附件sysbench包，编译安装
-将附件中独立的oltp_common.lua/oltp_read_write.lua替换原有的文件。
+解压sysbench 1.0.20源码包，编译安装
+将oltp_common.lua和oltp_read_write.lua替换原有的文件。
 ### Prepare:
 cd /usr/local/sysbench/share/sysbench/
 sysbench oltp_common.lua --mysql_storage_engine=innodb --db-driver=mysql --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=dbtest --mysql-password=123456 --mysql-db=sbtest --threads=10 --table_size=100000 --tables=10 --table_columns=20  prepare
